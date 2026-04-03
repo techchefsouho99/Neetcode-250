@@ -13,7 +13,7 @@ class Solution(object):
         Time: O(n), Space: O(1)
         """
         prev = None
-        curr, temp = head, head
+        curr, temp = head
         while curr:
             curr = curr.next      # move curr first
             temp.next = prev      # reverse the link

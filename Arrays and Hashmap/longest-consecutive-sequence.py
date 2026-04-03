@@ -1,6 +1,7 @@
 '''
 * Longest Consecutive Sequence : https://leetcode.com/problems/longest-consecutive-sequence/description/
 '''
+
 class Solution(object):
     def longestConsecutive(self, nums):
         """

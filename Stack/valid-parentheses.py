@@ -17,6 +17,27 @@ class Solution(object):
             else:
                 stack.append(c)
         return True if not stack else False
+        # res = []
+        # for ch in s:
+        #     if ch == '(' or ch == '{' or ch == '[':
+        #         res.append(ch)
+        #     else:
+        #         if ch == ')':
+        #             if res and res[-1] == '(':
+        #                 res.pop()
+        #             else:
+        #                 return False
+        #         if ch == '}':
+        #             if res and res[-1] == '{':
+        #                 res.pop()
+        #             else:
+        #                 return False
+        #         if ch == ']':
+        #             if res and res[-1] == '[':
+        #                 res.pop()
+        #             else:
+        #                 return False
+        # return True if len(res) == 0 else False
 
 
 # ---- Run tests when executed directly ----

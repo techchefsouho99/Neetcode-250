@@ -13,17 +13,13 @@ class Solution(object):
         Returns True if two binary trees are identical (same structure and values).
         Time: O(n), Space: O(h) due to recursion.
         """
-        # both empty
-        if p is None and q is None:
+        # checking if both the nodes are None
+        if not p and not q:
             return True
-        # one empty, one not
-        if p is None or q is None:
+        if p and q and p.val == q.val:
+            return True and self.isSameTree(p.left,q.left) and self.isSameTree(p.right,q.right)
+        else:
             return False
-        # both exist: compare values
-        if p.val != q.val:
-            return False
-        # compare subtrees
-        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
 
 # ---- Helpers for local testing ----

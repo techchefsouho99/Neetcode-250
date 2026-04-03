@@ -8,13 +8,12 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        seen = {}
-        for i, num in enumerate(nums):
-            comp = target - num
-            if comp in seen:
-                return [seen[comp], i]
-            seen[num] = i
-        return []
+        seenMap = {}
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in seenMap:
+                return [i , seenMap[diff]]
+            seenMap[nums[i]] = i
 
 # Example usage
 if __name__ == "__main__":

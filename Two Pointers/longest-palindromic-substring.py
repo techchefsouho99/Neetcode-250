@@ -7,29 +7,26 @@ class Solution(object):
         :rtype: str
         """
         n = len(s)
-        strIdx = 0
-        maxLen = 0
-        for i in range(n):
-
-            # odd-length center at i
-            l, r = i, i
+        resStr = ""
+        resLen = 0
+        for i in range(len(s)):
+            l = r = i
             while l >= 0 and r < n and s[l] == s[r]:
-                if (r - l + 1) > maxLen:
-                    strIdx = l
-                    maxLen = r - l + 1
-                l -= 1
-                r += 1
-
-            # even-length center between i and i+1
-            l, r = i, i + 1
+                strLen = r - l + 1
+                if resLen < strLen:
+                    resLen = strLen
+                    resStr = s[l:r+1]
+                l-=1
+                r+=1
+            l , r = i , i + 1
             while l >= 0 and r < n and s[l] == s[r]:
-                if (r - l + 1) > maxLen:
-                    strIdx = l
-                    maxLen = r - l + 1
-                l -= 1
-                r += 1
-
-        return s[strIdx: strIdx + maxLen]
+                strLen = r - l + 1
+                if resLen < strLen:
+                    resLen = strLen
+                    resStr = s[l:r+1]
+                l-=1
+                r+=1
+        return resStr
 
 
 # ---- Quick tests ----

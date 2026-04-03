@@ -1,3 +1,7 @@
+'''
+* Coin Change: https://leetcode.com/problems/coin-change/description/
+'''
+
 from typing import List
 
 class Solution(object):
@@ -14,6 +18,23 @@ class Solution(object):
                 if a - c >= 0:
                     dp[a] = min(dp[a], 1 + dp[a - c])
         return dp[amount] if dp[amount] != amount + 1 else -1
+    
+        # DP array where finArr[i] stores the minimum coins needed for amount i
+        # finArr = [-1 for _ in range(amount + 1)]
+        # finArr[0] = 0
+
+        # for i in range(1, amount + 1):
+        #     if i in coins:
+        #         finArr[i] = 1
+        #     else:
+        #         for coin in coins:
+        #             if coin < i and finArr[i - coin] != -1:
+        #                 if finArr[i] == -1:
+        #                     finArr[i] = 1 + finArr[i - coin]
+        #                 else:
+        #                     finArr[i] = min(finArr[i], 1 + finArr[i - coin])
+
+        # return finArr[amount]
 
 
 # ---- Quick tests ----

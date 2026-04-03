@@ -8,15 +8,14 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        s_map = {}
-        t_map = {}
         if len(s) != len(t):
             return False
         else:
+            sMap , tMap = {} , {}
             for i in range(len(s)):
-                s_map[s[i]] = 1 + s_map.get(s[i],0)
-                t_map[t[i]] = 1 + t_map.get(t[i],0)
-            return s_map == t_map
+                sMap[s[i]] = 1 + sMap.get(s[i],0)
+                tMap[t[i]] = 1 + tMap.get(t[i],0)
+            return sMap == tMap
 
 # Example usage:
 if __name__ == "__main__":

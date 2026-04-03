@@ -16,8 +16,7 @@ class Solution(object):
         Merge two sorted linked lists and return it as a new sorted list.
         Time: O(n+m), Space: O(1) extra
         """
-        fin = ListNode()     # dummy/sentinel head
-        tail = fin
+        dummy = tail = ListNode()     # dummy/sentinel head
 
         while list1 and list2:
             if list1.val < list2.val:
@@ -30,7 +29,7 @@ class Solution(object):
 
         # Attach the remainder
         tail.next = list1 if list1 else list2
-        return fin.next
+        return dummy.next
 
 
 # ---- Helpers for local testing ----
